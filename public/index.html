@@ -4,11 +4,7 @@
     <meta charset="utf-8" />
     <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="theme-color" content="#000000" />
-    <meta
-      name="description"
-      content="Web site created using create-react-app"
-    />
+    <meta name="description" content="Find you next beautiful mountain home in the Colorado Rockies." />
     <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
     <!--
       manifest.json provides metadata used when your web app is installed on a
@@ -24,7 +20,20 @@
       work correctly both with client-side routing and a non-root public URL.
       Learn how to configure a non-root public URL by running `npm run build`.
     -->
-    <title>React App</title>
+    <title>Resort Development Marketing</title>
+        <!-- CSS FILES -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
+        <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100;200;400;700&display=swap" rel="stylesheet">
+    
+        <link href="css/bootstrap.min.css" rel="stylesheet">
+    
+        <link href="css/bootstrap-icons.css" rel="stylesheet">
+    
+        <link href="css/main.css" rel="stylesheet">
+
   </head>
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
@@ -39,5 +48,42 @@
       To begin the development, run `npm start` or `yarn start`.
       To create a production bundle, use `npm run build` or `yarn build`.
     -->
+
+    <!-- JAVASCRIPT FILES -->
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/jquery.sticky.js"></script>
+    <!-- <script src="js/click-scroll.js"></script> -->
+    <!-- <script src="js/scroll.js"></script> -->
+    <script>
+        // Function to handle smooth scrolling
+        function scrollToSection(targetId) {
+            var targetSection = document.getElementById(targetId);
+    
+            if (targetSection) {
+                targetSection.scrollIntoView({ behavior: 'smooth' });
+    
+                // Mark the clicked link as active
+                var links = document.querySelectorAll('a.nav-link');
+                links.forEach(function (link) {
+                    link.classList.remove('active');
+                });
+                document.querySelector('a[href="#' + targetId + '"]').classList.add('active');
+            }
+        }
+    
+        // Add click event listeners to navigation links
+        document.addEventListener('DOMContentLoaded', function () {
+            var links = document.querySelectorAll('a.nav-link');
+            links.forEach(function (link) {
+                link.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    var targetId = this.getAttribute('href').substring(1);
+                    scrollToSection(targetId);
+                });
+            });
+        });
+    </script>
+    <script src="js/custom.js"></script>
   </body>
 </html>
