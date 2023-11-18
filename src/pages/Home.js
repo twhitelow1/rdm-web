@@ -1,10 +1,10 @@
-import React, {useState, useEffect } from 'react';
+import React from 'react';
 import HeroSection from '../components/Home/HeroSection';
 import Properties from '../components/Home/Properties';
 import About from '../components/Home/About';
 import Contact from '../components/Home/Contact';
 import Rentals from '../components/Home/Rentals';
-
+import "../styles/main.css";
 
 
 function Home() {

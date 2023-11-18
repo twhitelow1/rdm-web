@@ -12,7 +12,7 @@ function Contact() {
                             <div className="tab-pane fade show active" id="nav-ContactForm" role="tabpanel"
                                 aria-labelledby="nav-ContactForm-tab">
                                 <form className="custom-form contact-form mb-5 mb-lg-0" action="#" method="post"
-                                    role="form">
+                                    role="contact">
                                     <div className="contact-form-body">
                                         <div className="row">
                                             <div className="col-lg-6 col-md-6 col-12">

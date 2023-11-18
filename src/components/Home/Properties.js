@@ -51,7 +51,7 @@ function Properties() {
                             <p>
                                 <strong>4 Bedrooms, 4 Bathrooms</strong>
                             </p>
-                            <a href="/listing" style={{color:'#8fc8f3'}} >More Info</a> | <a href="https://my.matterport.com/show/?m=C7dKN9tkpPH&brand=0" target="_blank" style={{color:'#8fc8f3'}} > 3D Tour</a>
+                            <a href="/listing" style={{color:'#8fc8f3'}} >More Info</a> | <a href="https://my.matterport.com/show/?m=C7dKN9tkpPH&brand=0" target="_blank" rel="noreferrer" style={{color:'#8fc8f3'}} > 3D Tour</a>
                         </div>
                         </div>
                     </div>

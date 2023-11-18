@@ -25,7 +25,7 @@ function About() {
 
                     <div className="col-lg-6 col-12">
                         <div className="about-text-wrap">
-                            <img src="images/matt/matt-temporary.jpg" className="about-image img-fluid" />
+                            <img src="images/matt/matt-temporary.jpg" className="about-image img-fluid" alt=" matt with family" />
                         </div>
                     </div>
                 </div>

@@ -3,10 +3,10 @@ import { Link } from 'react-router-dom';
 
 function Navigation({navbarTransparent}) {
   return (
-    <nav className={`navbar navbar-expand-lg ${navbarTransparent ? '' : 'navbar-colored'}`}>
+    <nav className={`navbar navbar-expand-lg ${navbarTransparent ? '' : 'navbar-colored'}`} id="navbar">
     <div className="container" style={{justifyContent: 'center !important'}}>
         <Link className="navbar-brand" to="/">
-            <img src="images/layout/rdm-logo.png" alt="logo" className="img-fluid" />
+            <img src="../images/layout/rdm-logo.png" alt="logo" className="img-fluid" />
         </Link>
         
 

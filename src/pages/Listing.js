@@ -1,12 +1,49 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 
 function Listing() {
+    const [isSticky, setSticky] = React.useState(false);
+
+    useEffect(() => {
+        const handleScroll = () => {
+            const navbar = document.getElementById('navbar');
+            const listingMenu = document.getElementById('listing-menu');
+            const heroSection = document.getElementById('section_1');
+        
+            if (!navbar || !listingMenu || !heroSection) {
+                // Exit the function if any elements are not found
+                return;
+            }
+        
+            const navBarHeight = navbar.offsetHeight;
+            // Calculate the bottom position of the hero section
+            const heroSectionBottom = heroSection.offsetTop + heroSection.offsetHeight;
+        
+            // Check if the scroll position is past the hero section
+            if (window.scrollY > heroSectionBottom - navBarHeight) {
+                // Add the 'sticky' class to the listingMenu when scrolling past the hero section
+                listingMenu.classList.add('sticky');
+            } else {
+                // Remove the 'sticky' class when scrolling back up past the hero section
+                listingMenu.classList.remove('sticky');
+            }
+        };
+    
+        // Delayed execution
+        const delay = 100; // milliseconds
+        setTimeout(() => {
+            window.addEventListener('scroll', handleScroll);
+        }, delay);
+    
+        return () => {
+            window.removeEventListener('scroll', handleScroll);
+        };
+    }, []);
 
   return (
     <div className="App">
           <main>
               
-              <section className="hero-section" id="section_1" style={{ background: "url('images/homes/Avonhome/avonhome.webp') no-repeat center", backgroundSize: 'cover', marginBottom: '3em' }}>
+                <section className="hero-section" id="section_1" style={{ background: "url('images/homes/Avonhome/avonhome.webp') no-repeat center", backgroundSize: 'cover' }}>
                   <div className="section-overlay"></div>
                   <div className="container d-flex justify-content-center align-items-center">
                       <div className="row">
@@ -15,8 +52,20 @@ function Listing() {
                           </div>
                       </div>
                   </div>
-              </section>
-
+                </section>
+                <section className={`listing-menu ${isSticky ? 'sticky' : ''}`} id="listing-menu" >
+                        <div className="row justify-content-between p-2 flex">
+                            <div className="col-auto">
+                                <span><a href="#" className="back-link" style={{ textDecoration: 'none', color: '#000' }}> ← Back</a> | 123 Main St, Anytown, USA </span>
+                            </div>
+                            <div className="col-auto">
+                                <a href="#" className="share-link" style={{ textDecoration: 'none', color: '#000' }}>
+                                    Share
+                                    <span className="share-icon" style={{ marginLeft: '5px' }}>⤴</span>
+                                </a>
+                            </div>
+                        </div>
+                </section>
               <section id="section-Details" className="is-font-color-light is-background-color-dark" style={{ padding: '1.5em' }}>
                   <div className="info lp-vertical-paddings redesign">
                       <div className="lp-container text-center p-50 mx-auto" style={{ maxWidth: '1000px' }}>
@@ -53,7 +102,7 @@ function Listing() {
                       </div>
                   </div>
               </section>
-              <section id="section-amenities" className="is-font-color-light is-background-color-dark" style={{ marginBottom: '3em !important', padding: '1.5em' }}>
+              <section id="section-amenities" className="is-font-color-light is-background-color-dark" >
                   <div className="section lp-vertical-paddings">
                       <div className="lp-container p-50 mx-auto" style={{ maxWidth: '1000px' }} /> 
                       <div className="lp-title-group">
